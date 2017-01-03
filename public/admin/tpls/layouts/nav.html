@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse" role="navigation" ng-show="listed">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/" class="navbar-brand">寻寻觅觅</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    素材管理<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#/photo">图片</a>
+                    </li>
+                    <!--<li class="divider"></li>-->
+
+                </ul>
+            </li>
+
+            <li><a href="#/verify">素材审核</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    会员管理 <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#/user">会员管理</a>
+                    </li>
+                    <li>
+                        <a href="#/user/add">会员注册</a>
+                    </li>
+                </ul>
+            </li>
+<!--
+            <li><a href="">评论管理</a></li>
+            <li><a href="">权限管理</a></li>
+            <li><a href="">系统设置</a></li>
+            <li><a href="">订单管理</a></li>
+            <li><a href="">广告管理</a></li>
+            -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ user.name }}<span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i>退出</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</nav>

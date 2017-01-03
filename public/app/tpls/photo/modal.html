@@ -1,0 +1,25 @@
+
+    <div>
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()">
+                &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                《{{ photo.name }}》
+            </h4>
+        </div>
+        <div class="modal-body">
+            <p class="text-center">
+                <img ng-src="{{ photo.path }}" alt="{{ photo.name }}">
+            <p>
+                《{{ photo.name }}》
+            </p>
+            <p class="text-muted small">
+                {{ photo.keyword }}
+            </p>
+            <p class="small">
+                {{ photo.description }}
+            </p>
+        </div>
+
+    </div>

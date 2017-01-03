@@ -1,0 +1,67 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="pull-right">
+            <input type="text" class="form-control" placeholder="🔍" ng-model="keyword">
+        </div>
+    </div>
+</div>
+<div class="col-md-offset-1 col-md-10">
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>昵称</th>
+            <th>邮箱</th>
+            <th>头像</th>
+            <th>操作</th>
+        </tr>
+        <tr ng-repeat="user in users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td><img ng-src="{{ user.photo }}" alt="" width="50" class="img-circle"></td>
+            <td>
+                <a ng-click="open(user)">修改密码</a>
+                <a href="#/user/edit/{{user.id}}">编辑</a>
+            </td>
+        </tr>
+    </table>
+    <pager></pager>
+</div>
+<div >
+    <script type="text/ng-template" id="ModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">修改用户 {{ user.name }} 密码</h3>
+        </div>
+        <div class="modal-body form-horizontal">
+            <form name="userForm" >
+            <div class="col-sm-offset-2 col-md-8">
+
+                <div class="form-group">
+                    <label class="control-label">输入管理员密码:</label>
+                    <div>
+                        <input type="password" ng-model="user.adminpwd" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">新密码:</label>
+                    <div>
+                        <input type="password" class="form-control" ng-model="user.password" name="password">
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'' : !userForm.confirmPassword.$pristine && userForm.confirmPassword.$valid,'has-error' : !userForm.confirmPassword.$pristine && userForm.confirmPassword.$invalid }">
+                    <label class="control-label">再次输入新密码:</label>
+                    <div>
+                        <input type="password" name="confirmPassword" ng-model="user.confirmPassword" pw-check="password" class="form-control">
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-disabled="userForm.$invalid" ng-click="ok()">确定</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">返回</button>
+        </div>
+    </script>
+
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>

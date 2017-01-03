@@ -1,0 +1,270 @@
+*{
+    font-size: 12px;
+}
+html,body,body>div[ng-view]{
+    height:100%;
+}
+.btn-block{
+    background:red;
+    color:white;
+}
+.btn-block:hover{
+    background:#dd0000;
+    color:white;
+}
+
+.delate-form-inline{
+    display: inline;
+}
+
+.delate-form-inline .btn-link{
+    font-size: 12px;
+    padding:0;
+}
+
+.nav-custom .nav{
+    text-align: center;
+    border: 0;
+}
+.nav-background{
+    background: white;
+    display: none;
+    height:60px;
+    width:100%;
+    top:0;
+    position: fixed;
+    z-index: 99;
+}
+.nav-custom{
+    box-shadow: 2px 2px 5px #eee;
+    position: fixed;
+    width:100%;
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+    z-index: 999;
+    height:60px;
+    overflow: hidden;
+}
+
+.nav-custom .nav li{
+    float: none;
+    display: inline-block;
+    min-width:60px;
+    line-height: 40px;
+}
+
+.nav-custom .nav li a{
+    font-size: 14px;
+    color:black;
+    text-shadow:2px 2px 2px #FFFFFF;
+    font-weight: bold;
+}
+.nav-custom .nav li a:hover{
+    background-color: transparent;
+    color:#333;
+}
+
+.carousel img{
+    width:100%;
+}
+
+.carousel-control{
+    line-height:400px;
+    font-size: 60px;
+}
+
+.container span,.container a{
+    font-family: Courier,monospace;
+    font-size:14px;
+}
+.line-lg{
+    line-height: 5em;
+}
+
+/* ---- grid ---- */
+
+.wrapper{
+    margin-top: 30px;
+}
+
+.grid {
+    /*background: #DDD;*/
+}
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+    overflow:hidden;
+}
+
+.grid-item {
+    padding: 0;
+    float: left;
+}
+.grid-item .meta{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.shade .desc{
+    padding:10px;
+    line-height:25px;
+    background:black;
+    position: absolute;
+    bottom:0;
+    border-top: 1px solid white;
+}
+
+.photo-container{
+    position: relative;
+}
+.photo-container > .shade{
+    background: black;
+    color: white;
+    opacity: 0.5;
+    width: 100%;
+    height:100%;
+    top:0;
+    position: absolute;
+    filter:alpha(opacity=50);
+    display: none;
+    z-index: 89;
+}
+.photo-container > .shade a{
+    color:white;
+}
+.photo-container:hover > .shade{
+    display: block;
+}
+
+.grid-item img {
+    display: block;
+    max-width: 100%;
+}
+
+.grid .photo-container{
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.2);
+    border-radius:6px;
+    overflow: hidden;
+    margin-bottom:15px;
+}
+
+.grid .photo-container:hover{
+    box-shadow: 0 1px 5px rgba(35, 25, 25, 0.5);
+}
+
+.grid-item>div{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.pd-h-20{
+    padding:10px 0;
+}
+
+.modal-body img{
+    max-width: 100%;
+}
+
+/*-- Home --*/
+
+.home-contain{
+    background: #fff url('../images/index.jpg')  no-repeat;
+    background-position:center;
+    min-height: 730px;
+}
+
+.home-contain .home-panel{
+    margin-top: 250px;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+
+a{
+    outline: medium none !important;
+}
+
+.w-top{
+    background: #fff url("../images/icon.png") no-repeat scroll 999px 999px;
+    background-position: 0 -934px;
+    bottom: 30px;
+    height: 50px;
+    overflow: hidden;
+    position: fixed;
+    right: 30px;
+    text-indent: -2000px;
+    width: 50px;
+    z-index: 79;
+    display: none;
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+}
+
+.user-header{
+    margin: 100px 0 50px;
+}
+
+.user-header img{
+    width:130px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+    vertical-align: middle;
+}
+
+.mg-20{
+    margin-top: 20px;
+}
+
+a{
+    color: #8a6d3b;
+}
+
+.modal-body{
+    display: table;
+    content: " ";
+}
+
+/*Login*/
+#app-layout{
+    background-image: url('/assets/images/background-icon.jpg');
+    background-position: center ;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    height:100%;
+}
+
+#app-layout .navbar,#app-layout .container{
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.modal-body{
+    width:100%;
+}
+
+.user-icon{
+    max-width: 200px;
+}
+.tb-img{
+    max-height:150px;
+}
+
+.user-icon-sm{
+    max-width:50px;
+    width:50px;
+}
+
+[ng-click]{
+    cursor: pointer;
+}

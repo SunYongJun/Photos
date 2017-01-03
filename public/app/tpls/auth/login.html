@@ -1,0 +1,55 @@
+<div id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top" ng-include="'/app/tpls/auth/nav.html'"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" name="Login">
+                            <div class="form-group" ng-class="{'has-error' : error.email ,'': !error.email}">
+                                <label class="col-md-4 control-label">E-Mail Address</label>
+
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" ng-model="user.email" >
+                                    <span class="help-block">
+                                        <strong>{{ error.email }}</strong>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Password</label>
+
+                                <div class="col-md-6">
+                                    <input type="password" class="form-control" ng-model="user.password">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="button" class="btn btn-primary" ng-disabled="Login.$invalid" ng-click="login(user)">
+                                        <i class="fa fa-btn fa-sign-in"></i>Login
+                                    </button>
+
+                                    <a class="btn btn-link" href="#/password/reset">Forgot Your Password?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

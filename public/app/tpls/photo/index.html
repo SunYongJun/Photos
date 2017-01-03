@@ -1,0 +1,46 @@
+<nav-bar></nav-bar>
+<div carouse></div>
+
+<div class="text-center">
+    <span class="line-lg">Free high-resolution photos.</span>
+</div>
+<div class="text-center">
+    <image-up></image-up>
+</div>
+<div class="container">
+    <div class="wrapper">
+        <div class="grid" masonry>
+            <div class="grid-item col-md-4 masonry-brick" ng-repeat="photo in photos">
+                <div class="col-md-12">
+                    <div class="photo-container">
+                        <img width="100%" ng-src="{{ photo.resize_path }}">
+
+                        <div class="shade modal-link" ng-click="open(photo)">
+                            <div class="desc col-md-12">
+                                <div>
+                                    <strong>《{{ photo.name }}》</strong>
+                                </div>
+                                <div class="meta">
+                                    <div class="col-md-6">
+                                        <a class="pull-left">
+                                            <img ng-src="{{ photo.user.photo }}" alt="" height="30" class="img-circle user-icon">
+                                        </a>
+                                        <span class="pull-left">　{{ photo.user.name }}</span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="/photo/download/{{ photo.id }}"><i>下载</i></a>
+                                        <a  href="javascript:;"><i>查看</i></a>&#12288;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a title="回到顶部" class="w-top" href="#"></a>
+    </div>
+</div>
+
+<script src="/assets/masonry/masonry.pkgd.min.js"></script>
+<script src="/assets/masonry/imagesloaded.pkgd.min.js"></script>

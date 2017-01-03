@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/assets/css/cropper.css">
+<div>
+    <ol class="breadcrumb">
+        <li><a href="">用户管理</a></li>
+        <li><a href="">用户注册</a></li>
+    </ol>
+    <div>
+        <form role="form" class="form-horizontal" name="userForm" method="post">
+            <input type="hidden" name="_token" value="{{ _token }}">
+            <div class="form-group" ng-class="{'has-error':userForm.email.$dirty && userForm.email.$invalid,'has-success':userForm.email.$dirty && userForm.email.$valid}">
+                <label class="control-label col-md-2">邮箱</label>
+                <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" ng-model="user.email" required>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.name.$dirty && userForm.name.$invalid,'has-success':userForm.user.$dirty && userForm.user.$valid}">
+                <label class="control-label col-md-2">用户名</label>
+                <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" ng-model="user.name" required>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.passwd.$dirty && userForm.passwd.$invalid,' ':userForm.passwd.$dirty && userForm.passwd.$valid}">
+                <label class="control-label col-md-2">密码</label>
+                <div class="col-md-6">
+                    <input type="password" name="password" class="form-control" ng-model="user.password" required>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-success' : !userForm.confirmPassword.$pristine && userForm.confirmPassword.$valid,'has-error' : !userForm.confirmPassword.$pristine && userForm.confirmPassword.$invalid }">
+                <label class="control-label col-md-2">再次输入密码</label>
+                <div class="col-md-6">
+                    <input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" pw-check="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">上传头像</label>
+                <div>
+                    <photo>
+                        <upload></upload>
+                    </photo>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-2">
+                    <input type="button" ng-click="create()" class="btn btn-block"  ng-disabled="userForm.$invalid" value="提交">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/assets/js/cropper.min.js"></script>
+

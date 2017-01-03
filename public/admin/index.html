@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh" ng-app="RouteModule">
+<head>
+    <meta charset="UTF-8">
+    <title>寻寻觅觅</title>
+    <link rel="stylesheet" href="/app/framework/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style-uploder.css">
+    <script src="/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="/app/framework/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/app/framework/angular/js/angular.min.js"></script>
+    <script src="/app/framework/angular/js/angular-route.min.js"></script>
+    <script src="/app/framework/angular/js/ui-bootstrap-tpls.js"></script>
+    <script src="/admin/js/app.js"></script>
+    <script src="/admin/js/controllers.js"></script>
+    <script src="/app/js/directives.js"></script>
+</head>
+<body>
+
+<nav-banner></nav-banner>
+<div class="container" ng-show="listed">
+    <div class="row" ng-view>
+        正在加载...
+    </div>
+</div>
+
+<div ng-include="'/admin/tpls/layouts/footer.html'"></div>
+</body>
+</html>

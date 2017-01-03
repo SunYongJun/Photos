@@ -1,0 +1,65 @@
+<div>
+    <ol class="breadcrumb">
+        <li><a href="">图片管理</a></li>
+    </ol>
+</div>
+<div class="panel">
+    <div class="panel-body">
+        <div class="col-md-2 col-sm-offset-1">
+            <select class="form-control input-sm" ng-model="uid" ng-options="m.id as m.name for m in users">
+                <option  value="">--选择用户--</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select class="form-control input-sm" ng-model="status" ng-options="x as y for (x,y) in statuses">
+                <option  value="">--选择状态--</option>
+            </select>
+        </div>
+        <div class="pull-right">
+            <input type="text" class="form-control input-sm" placeholder="🔍" ng-model="keyword">
+        </div>
+    </div>
+</div>
+<div class="col-md-offset-1 col-md-10">
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>图片</th>
+            <th>用户</th>
+            <th>关键词</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        <tr ng-repeat="photo in photos">
+            <td>{{ photo.id }}</td>
+            <td>{{ photo.name }}</td>
+            <td><img class="tb-img" ng-click="show(photo)" ng-src="{{ photo.resize_path }}" alt=""></td>
+            <td><img ng-src="{{ photo.user.photo }}" class="img-circle user-icon-sm"> {{ photo.user.name }}</td>
+            <td>{{ photo.keywords }}</td>
+            <td>{{ statuses[photo.status] }}</td>
+            <td>
+                <a ng-click="show(photo)">查看</a>
+            </td>
+        </tr>
+    </table>
+    <pager></pager>
+</div>
+
+<div >
+    <script type="text/ng-template" id="ModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">《{{ photo.name }}》</h3>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+                <img ng-src="{{photo.path}}" alt="">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">返回</button>
+        </div>
+    </script>
+
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>

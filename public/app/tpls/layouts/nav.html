@@ -1,0 +1,39 @@
+<div class="nav-background"></div>
+<div  class="nav-custom">
+    <div class="col-md-2 text-center nav">
+        <li>
+            <a href="">
+                <h4>LOGO</h4>
+            </a>
+        </li>
+    </div>
+    <div class="col-md-8">
+        <ul class="nav">
+            <li>
+                <a href="#/photo">
+                    图片
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-2">
+        <ul class="nav" ng-show="attempt">
+            <li>
+                <a href="#/user">
+                    <img ng-src="{{ user.photo }}" class="img-circle user-icon-sm">
+                </a>
+            </li>
+            <li>
+                <a ng-click="logout()">[ 注销 ]</a>
+            </li>
+        </ul>
+        <ul class="nav" ng-show="!attempt">
+            <li>
+                <a href="#/login">登录</a>
+            </li>
+            <li>
+                <a href="#/register">注册</a>
+            </li>
+        </ul>
+    </div>
+</div>

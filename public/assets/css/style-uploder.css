@@ -1,0 +1,58 @@
+/*Photo上传*/
+html,body,.body{
+    height:100%;
+}
+
+.body{
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.body-container{
+    background: black;
+    opacity: 0.8;
+    color:white;
+    height:100%;
+}
+
+.uploader-container{
+    text-align: center;
+    margin-top: 5%;
+    letter-spacing: 2px;
+    line-height: 3em;
+    font-size: 14px;
+}
+.uploader-container .uploader-header{
+    margin:90px 0;
+}
+
+.uploader-container .uploader-footer{
+    margin: 50px 0;
+}
+
+.btn-black,.btn-black:hover{
+    background: #222;
+    padding: 8px 20px;
+}
+
+.btn-white,.btn-white:hover{
+    background: #fff;
+    padding: 8px 20px;
+    color:black;
+}
+
+.body-container .error{
+    background: #3c763d;
+    line-height: 50px;
+    text-align: center;
+    height:50px;
+    position: fixed;
+    width: 100%;
+    top:0;
+}
+
+#img{
+    max-width: 500px;
+}
